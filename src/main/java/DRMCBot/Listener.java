@@ -36,6 +36,8 @@ public class Listener extends ListenerAdapter {
             LOGGER.info("Shutting Down");
             event.getJDA().shutdown();
             BotCommons.shutdown(event.getJDA());
+
+            return;
         }
 
         if (raw.startsWith(prefix)){

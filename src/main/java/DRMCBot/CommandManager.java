@@ -1,6 +1,7 @@
 package DRMCBot;
 
 import DRMCBot.Command.CommandContext;
+import DRMCBot.Command.Commands.PasteCommand;
 import DRMCBot.Command.Commands.PingCommand;
 import DRMCBot.Command.ICommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -16,6 +17,7 @@ public class CommandManager {
 
     public CommandManager(){
         addCommand(new PingCommand());
+        addCommand(new PasteCommand());
     }
 
     private void addCommand(ICommand cmd){
@@ -33,7 +35,7 @@ public class CommandManager {
         String searchLower = search.toLowerCase();
 
         for (ICommand cmd:this.commands){
-            if (cmd.getName().equals(searchLower)||cmd.getAliases().contains(searchLower)){
+            if (cmd.getName().equals(searchLower) || cmd.getAliases().contains(searchLower)){
                 return cmd;
             }
         }
