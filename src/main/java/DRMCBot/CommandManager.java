@@ -1,6 +1,7 @@
 package DRMCBot;
 
 import DRMCBot.Command.CommandContext;
+import DRMCBot.Command.Commands.PingCommand;
 import DRMCBot.Command.ICommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -12,6 +13,10 @@ import java.util.regex.Pattern;
 
 public class CommandManager {
     private final List<ICommand> commands = new ArrayList<>();
+
+    public CommandManager(){
+        addCommand(new PingCommand());
+    }
 
     private void addCommand(ICommand cmd){
         boolean nameFound = this.commands.stream().anyMatch((it)-> it.getName().equalsIgnoreCase(cmd.getName()));
