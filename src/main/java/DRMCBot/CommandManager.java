@@ -1,6 +1,8 @@
 package DRMCBot;
 
 import DRMCBot.Command.CommandContext;
+import DRMCBot.Command.Commands.KickCommand;
+import DRMCBot.Command.Commands.MemeCommand;
 import DRMCBot.Command.Commands.PasteCommand;
 import DRMCBot.Command.Commands.PingCommand;
 import DRMCBot.Command.ICommand;
@@ -18,6 +20,8 @@ public class CommandManager {
     public CommandManager(){
         addCommand(new PingCommand());
         addCommand(new PasteCommand());
+        addCommand(new KickCommand());
+        addCommand(new MemeCommand());
     }
 
     private void addCommand(ICommand cmd){

@@ -1,6 +1,8 @@
 package DRMCBot;
 
+import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 
@@ -10,6 +12,11 @@ public class Bot {
 
     private Bot() throws LoginException {
         WebUtils.setUserAgent("Mozilla/5.0 DRMC Bot#7872");
+        EmbedUtils.setEmbedBuilder(
+                ()-> new EmbedBuilder()
+                .setColor(0x01afef)
+                .setFooter("DRMC Bot")
+        );
 
         new JDABuilder()
                 .setToken(Config.get("token"))

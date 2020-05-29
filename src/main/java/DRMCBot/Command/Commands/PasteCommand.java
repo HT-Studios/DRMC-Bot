@@ -22,7 +22,7 @@ public class PasteCommand implements ICommand {
         final TextChannel channel=ctx.getChannel();
 
         if(args.size()<2){
-            channel.sendMessage("Missing Arguments").queue();
+            channel.sendMessage("缺少參數！").queue();
             return;
         }
 
