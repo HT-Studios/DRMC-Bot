@@ -16,8 +16,7 @@ public class PingCommand implements ICommand {
 
         jda.getRestPing().queue(
                 (ping) -> ctx.getChannel()
-                .sendMessage(new EmbedBuilder()
-                        .setColor(0x01afef)
+                .sendMessage(EmbedUtils.defaultEmbed()
                         .setTitle("回應資訊")
                         .setDescription("休息時回應: "+ping
                                 +"毫秒\n網路端回應: " +jda.getGatewayPing()

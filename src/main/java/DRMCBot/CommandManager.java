@@ -1,10 +1,7 @@
 package DRMCBot;
 
 import DRMCBot.Command.CommandContext;
-import DRMCBot.Command.Commands.KickCommand;
-import DRMCBot.Command.Commands.MemeCommand;
-import DRMCBot.Command.Commands.PasteCommand;
-import DRMCBot.Command.Commands.PingCommand;
+import DRMCBot.Command.Commands.*;
 import DRMCBot.Command.ICommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -22,6 +19,8 @@ public class CommandManager {
         addCommand(new PasteCommand());
         addCommand(new KickCommand());
         addCommand(new MemeCommand());
+        addCommand(new JokeCommand());
+        addCommand(new InstagramCommand());
     }
 
     private void addCommand(ICommand cmd){
