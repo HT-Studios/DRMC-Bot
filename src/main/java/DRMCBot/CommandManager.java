@@ -21,6 +21,7 @@ public class CommandManager {
         addCommand(new MemeCommand());
         addCommand(new JokeCommand());
         addCommand(new InstagramCommand());
+        addCommand(new HasteCommand());
     }
 
     private void addCommand(ICommand cmd){
