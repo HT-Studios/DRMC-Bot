@@ -1,7 +1,9 @@
-package DRMCBot.Command.music;
+package DRMCBot.Command.Commands.music;
 
 import DRMCBot.Command.CommandContext;
 import DRMCBot.Command.ICommand;
+import DRMCBot.Command.music.GuildMusicManager;
+import DRMCBot.Command.music.PlayerManager;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import me.duncte123.botcommons.messaging.EmbedUtils;
@@ -36,7 +38,7 @@ public class QueueCommand implements ICommand {
             AudioTrackInfo info=track.getInfo();
 
             builder.appendDescription(String.format(
-                    "%s - %s",
+                    "%s - %s \n",
                     info.title,
                     info.author
             ));

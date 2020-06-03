@@ -1,4 +1,16 @@
 package DRMCBot.Command.Commands;
 
-public class ServerinfoCommand {
+import DRMCBot.Command.CommandContext;
+import DRMCBot.Command.ICommand;
+
+public class ServerinfoCommand implements ICommand {
+    @Override
+    public void handle(CommandContext ctx) {
+
+    }
+
+    @Override
+    public String getName() {
+        return "serverinfo";
+    }
 }

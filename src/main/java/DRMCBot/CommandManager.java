@@ -2,7 +2,10 @@ package DRMCBot;
 
 import DRMCBot.Command.CommandContext;
 import DRMCBot.Command.Commands.*;
+import DRMCBot.Command.Commands.admin.SetPrefixCommand;
+import DRMCBot.Command.Commands.music.*;
 import DRMCBot.Command.ICommand;
+import DRMCBot.Command.Commands.music.QueueCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -22,6 +25,16 @@ public class CommandManager {
         addCommand(new JokeCommand());
         addCommand(new InstagramCommand());
         addCommand(new HasteCommand());
+        addCommand(new SetPrefixCommand());
+        addCommand(new JoinCommand());
+        addCommand(new LeaveCommand());
+        addCommand(new PlayCommand());
+        addCommand(new StopCommand());
+        addCommand(new PauseCommand());
+        addCommand(new ResumeCommand());
+        addCommand(new QueueCommand());
+        addCommand(new SkipCommand());
+        addCommand(new NowPlayingCommand());
     }
 
     private void addCommand(ICommand cmd){
@@ -47,9 +60,9 @@ public class CommandManager {
         return null;
     }
 
-    void handle(GuildMessageReceivedEvent event){
+    void handle(GuildMessageReceivedEvent event,String prefix){
         String[] split=event.getMessage().getContentRaw()
-                .replaceFirst("(?i)"+ Pattern.quote(Config.get("prefix")),"")
+                .replaceFirst("(?i)"+ Pattern.quote(prefix),"")
                 .split("\\s+");
         String invoke = split[0].toLowerCase();
         ICommand cmd=this.getCommand(invoke);

@@ -1,4 +1,4 @@
-package DRMCBot.Command.Commands.music;
+package DRMCBot.Command.music;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter;
@@ -35,6 +35,10 @@ public class TrackScheduler extends AudioEventAdapter {
         if (!player.startTrack(track, true)) {
             queue.offer(track);
         }
+    }
+
+    public BlockingQueue<AudioTrack> getQueue(){
+        return queue;
     }
 
     /**
